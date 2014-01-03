@@ -62,13 +62,12 @@
   </div>
 	<script charset="utf-8">
     var map,
-        maps,
-        ∞ = Number.POSITIVE_INFINITY;  
+        maps;
     
     function scroll() {
       var closestFeature,
           index,
-          Δ = ∞;
+          Δ = Number.POSITIVE_INFINITY;
 
       var scrollTop = d3.select("#sidebar").property("scrollTop");        
   
