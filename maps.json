@@ -1,0 +1,89 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Fletum, Wieringermeer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zoom": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.7853,5.0238
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Walcheren",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zoom": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.5203,3.5355
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Land van Maas en Waal",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zoom": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.8612,5.5203
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Waterland",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zoom": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.4210,5.0069
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Postelsedijk 15, Reusel",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zoom": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          51.3211,5.1737
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "title": "Plot GZ 59 West",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "zoom": 13
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          52.4809,5.6161
+        ]
+      }
+    }
+  ] 
+}

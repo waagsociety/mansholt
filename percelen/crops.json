@@ -1,0 +1,382 @@
+[
+    {
+        "name": "Aardappelen, bestrijdingsmaatregel AM",
+        "code": 2025,
+        "category": "aardappelen"
+    },
+    {
+        "name": "Aardappelen, consumptie op klei/lössgrond",
+        "code": 2951,
+        "category": "aardappelen"
+    },
+    {
+        "name": "Aardappelen, consumptie op zand/veengrond",
+        "code": 3792,
+        "category": "aardappelen"
+    },
+    {
+        "name": "Aardappelen, poot op klei/lössgrond",
+        "code": 3730,
+        "category": "aardappelen"
+    },
+    {
+        "name": "Aardappelen, poot op zand/veengrond",
+        "code": 3731,
+        "category": "aardappelen"
+    },
+    {
+        "name": "Aardappelen, zetmeel",
+        "code": 3732,
+        "category": "aardappelen"
+    },
+    {
+        "name": "Bieten, suiker-",
+        "code": 256,
+        "category": "bieten"
+    },
+    {
+        "name": "Bieten, voeder- (inclusief aardperen)",
+        "code": 2651,
+        "category": "bieten"
+    },
+    {
+        "name": "Blauwmaanzaad",
+        "code": 247,
+        "category": "zaden"
+    },
+    {
+        "name": "Bloembollen en - knollen",
+        "code": 176,
+        "category": "bloemen"
+    },
+    {
+        "name": "Bloemkwekerijgewassen (inclusief bloemzaden)",
+        "code": 175,
+        "category": "bloemen"
+    },
+    {
+        "name": "Bloembollen en - knollen",
+        "code": 176,
+        "category": "bloemen"
+    },
+    {
+        "name": "Bloemkwekerijgewassen (inclusief bloemzaden)",
+        "code": 175,
+        "category": "bloemen"
+    },
+    {
+        "name": "Bonen, bruine",
+        "code": 242,
+        "category": "bonen"
+    },
+    {
+        "name": "Bonen, tuin- (droog te oogsten) (geen consumptie)",
+        "code": 853,
+        "category": "bonen"
+    },
+    {
+        "name": "Bonen, tuin- (groen te oogsten)",
+        "code": 854,
+        "category": "bonen"
+    },
+    {
+        "name": "Bonen, veld-(oa duive-, paarde-, wierbonen)(droog te oogsten",
+        "code": 243,
+        "category": "bonen"
+    },
+    {
+        "name": "Boomkwekerij en vaste planten",
+        "code": 229,
+        "category": ""
+    },
+    {
+        "name": "Bos (SBL-regeling)",
+        "code": 2027,
+        "category": "bos"
+    },
+    {
+        "name": "Bos (set aside regeling)",
+        "code": 864,
+        "category": "bos"
+    },
+    {
+        "name": "Bos, blijvend, met herplantplicht",
+        "code": 1936,
+        "category": "bos"
+    },
+    {
+        "name": "Bos, zonder herplantplicht",
+        "code": 863,
+        "category": "bos"
+    },
+    {
+        "name": "Braak met bos (SBL-regeling na 28 juni 1995)",
+        "code": 2026,
+        "category": "bos"
+    },
+    {
+        "name": "Braak, natuur-",
+        "code": 2029,
+        "category": ""
+    },
+    {
+        "name": "Cichorei",
+        "code": 511,
+        "category": ""
+    },
+    {
+        "name": "Dummycode voor dummypercelen",
+        "code": 1959,
+        "category": ""
+    },
+    {
+        "name": "Erwten inclusief schokkers (droog te oogsten)",
+        "code": 2650,
+        "category": "erwten"
+    },
+    {
+        "name": "Erwten, groene/gele, groen te oogsten",
+        "code": 244,
+        "category": "erwten"
+    },
+    {
+        "name": "Faunaranden, bouwland",
+        "code": 3721,
+        "category": ""
+    },
+    {
+        "name": "Faunaranden, grasland",
+        "code": 3720,
+        "category": "gras"
+    },
+    {
+        "name": "Fruit",
+        "code": 212,
+        "category": "fruit"
+    },
+    {
+        "name": "Gerst, winter-",
+        "code": 235,
+        "category": "granen"
+    },
+    {
+        "name": "Gerst, zomer-",
+        "code": 236,
+        "category": "granen"
+    },
+    {
+        "name": "Granen, overig",
+        "code": 2652,
+        "category": "granen"
+    },
+    {
+        "name": "Grasland, blijvend",
+        "code": 265,
+        "category": "gras"
+    },
+    {
+        "name": "Grasland, natuurlijk",
+        "code": 3718,
+        "category": "gras"
+    },
+    {
+        "name": "Grasland, tijdelijk",
+        "code": 266,
+        "category": "gras"
+    },
+    {
+        "name": "Graszaad (inclusief klaverzaad)",
+        "code": 2653,
+        "category": "gras"
+    },
+    {
+        "name": "Graszoden",
+        "code": 1921,
+        "category": "gras"
+    },
+    {
+        "name": "Groenbemesters, niet-vlinderbloemige",
+        "code": 2299,
+        "category": ""
+    },
+    {
+        "name": "Groenbemesters, vlinderbloemige",
+        "code": 2298,
+        "category": ""
+    },
+    {
+        "name": "Groenten open grond (inclusief groentezaden)",
+        "code": 672,
+        "category": ""
+    },
+    {
+        "name": "Haver",
+        "code": 238,
+        "category": "granen"
+    },
+    {
+        "name": "Heide",
+        "code": 3719,
+        "category": "heide"
+    },
+    {
+        "name": "Hennep, vezel-",
+        "code": 944,
+        "category": "hennep"
+    },
+    {
+        "name": "Kapucijners (en grauwe erwten)",
+        "code": 241,
+        "category": "erwten"
+    },
+    {
+        "name": "Karwijzaad (oogst dit jaar)",
+        "code": 246,
+        "category": "zaden"
+    },
+    {
+        "name": "Koolzaad, winter (ook boterzaad)",
+        "code": 1922,
+        "category": "zaden"
+    },
+    {
+        "name": "Koolzaad, zomer (ook boterzaad)",
+        "code": 1923,
+        "category": "zaden"
+    },
+    {
+        "name": "Lijnzaad niet van vezelvlas (olievlas)",
+        "code": 666,
+        "category": "zaden"
+    },
+    {
+        "name": "Lupinen, niet bittere-",
+        "code": 663,
+        "category": ""
+    },
+    {
+        "name": "Luzerne",
+        "code": 258,
+        "category": ""
+    },
+    {
+        "name": "Mais, energie-",
+        "code": 2032,
+        "category": "mais"
+    },
+    {
+        "name": "Maïs, corncob mix",
+        "code": 317,
+        "category": "mais"
+    },
+    {
+        "name": "Maïs, korrel-",
+        "code": 316,
+        "category": "mais"
+    },
+    {
+        "name": "Maïs, snij-",
+        "code": 259,
+        "category": "mais"
+    },
+    {
+        "name": "Maïs, suiker-",
+        "code": 814,
+        "category": "mais"
+    },
+    {
+        "name": "Miscanthus (olifantsgras)",
+        "code": 516,
+        "category": ""
+    },
+    {
+        "name": "Notenbomen",
+        "code": 2645,
+        "category": ""
+    },
+    {
+        "name": "Onbekend/gewas niet opgegeven",
+        "code": 1950,
+        "category": ""
+    },
+    {
+        "name": "Onbeteelde grond door een teeltverbod/ontheffing",
+        "code": 2300,
+        "category": ""
+    },
+    {
+        "name": "Onbeteelde grond, tijdelijk",
+        "code": 2033,
+        "category": ""
+    },
+    {
+        "name": "Overige akkerbouwgewassen",
+        "code": 1925,
+        "category": ""
+    },
+    {
+        "name": "Overige natuurterreinen",
+        "code": 3722,
+        "category": ""
+    },
+    {
+        "name": "Raapzaad",
+        "code": 664,
+        "category": "zaden"
+    },
+    {
+        "name": "Rogge (geen snijrogge)",
+        "code": 237,
+        "category": "granen"
+    },
+    {
+        "name": "Sojabonen",
+        "code": 665,
+        "category": "soja"
+    },
+    {
+        "name": "Tagetes (zand, loss) (geen groene braak)",
+        "code": 1930,
+        "category": ""
+    },
+    {
+        "name": "Tarwe, winter-",
+        "code": 233,
+        "category": "granen"
+    },
+    {
+        "name": "Tarwe, zomer-",
+        "code": 234,
+        "category": "granen"
+    },
+    {
+        "name": "Triticale",
+        "code": 314,
+        "category": "granen"
+    },
+    {
+        "name": "Uien, poot en plant (incl. sjalotten)",
+        "code": 1931,
+        "category": "uien"
+    },
+    {
+        "name": "Uien, zaai-",
+        "code": 262,
+        "category": "uien"
+    },
+    {
+        "name": "Vezelvlas",
+        "code": 3736,
+        "category": ""
+    },
+    {
+        "name": "Woudbomen met korte omlooptijd",
+        "code": 2297,
+        "category": ""
+    },
+    {
+        "name": "Zonnebloemen",
+        "code": 515,
+        "category": ""
+    }
+]

@@ -1,0 +1,87 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+body {
+  background-color: black;
+  font-family: 'Roboto Slab', serif;
+  font-size: 15px;
+}
+
+html, body {
+	height: 100%;
+  background-color: white;  
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.leaflet-container {
+  background-color: white !important;
+}
+
+.map-container {
+  position: absolute;
+}
+
+.map {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.map-header {
+  display: none;
+  z-index: 999;
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  height: auto;
+}
+
+.map-container.top .map-header {
+  top: 0;
+}
+
+.map-container.bottom .map-header {
+  bottom: 0;
+}
+
+.map-header h2,
+.map-header p {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+a .map-header h2 {
+  text-decoration: underline;
+}
+
+
+a,
+a:hover,
+a:visited {
+  color: black;
+}
+
+.map-header h2 {
+  margin-right: 5px;
+}
+
+.map-container:hover .map-header {
+  display: block;
+}

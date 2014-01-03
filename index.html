@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mansholt, Landschap in Perspectief</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="index.css" />
+	<link rel="stylesheet" href="leaflet.css" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+  
+	<script src="d3.min.js"></script>
+	<script src="leaflet.js"></script>
+</head>
+<body>
+  <!-- <h1>Mansholt, Landschap in Perspectief</h1> -->
+	<script>
+    var maps;
+    var gutter = 5;
+    
+    function px(x) {
+      return x + "px";
+    }
+    
+    function row(orientation, i) {
+      var row = orientation === "landscape" ? Math.floor(i / 3) : Math.floor(i / 2);
+      return row;
+    }
+    
+    function column(orientation, i) {
+      var column = orientation === "landscape" ? (i % 3) : (i % 2);
+      return column;
+    }
+
+    function rowHeight(orientation, height) {
+      return (height - gutter) / (orientation === "landscape" ? 2 : 3) - gutter;
+    }
+    
+    function columnWidth(orientation, width) {
+      return (width - gutter) / (orientation === "landscape" ? 3 : 2) - gutter;
+    }
+    
+    d3.json("maps.json", function(json) {
+      maps = json;
+      var container = d3.select("body").selectAll("div.map-container")
+          .data(maps.features).enter()
+        .append("div")
+          .each(setPosition)
+          .attr("class", "map-container");
+    
+      var header = container
+        .append("a")
+          .attr("href", function (d, i) { return "map.html#" + i})
+        .append("div")
+          .attr("class", "map-header");  
+          
+      header.append("h2")
+          .html(function(d) { return d.properties.title; });
+      header.append("p")    
+          .html(function(d) { return d.properties.description; });
+          
+      container.append("div")
+          .attr("class", "map")
+          .attr("id", function(d, i) { return "map" + i; })
+          .each(function(d, i) {              
+            var map = L.map('map' + i, {
+              minZoom: 8,
+              maxZoom: 16,
+              zoomControl: false
+            });
+
+            map.attributionControl.setPrefix('');
+          
+            //var agricultureTileUrl = "http://127.0.0.1:20008/tile/gewaspercelen/{z}/{x}/{y}.png?updated=1386597158000&metatile=1&scale=1";
+            var agricultureTileUrl = "http://tiles.citysdk.waag.org/v2/mansholt/{z}/{x}/{y}.png";
+            L.tileLayer(agricultureTileUrl, {
+                  attributionControl: false
+            }).addTo(map);       
+            map.setView(d.geometry.coordinates, d.properties.zoom);
+          });
+        
+        update();
+        
+    });
+    
+    function setPosition(d, i) {
+      var width = window.innerWidth,
+          height = window.innerHeight,
+          orientation = width > height ? "landscape" : "portrait";
+      
+      d3.select(this)
+        .style("left",   px(gutter + column(orientation, i) * (columnWidth(orientation, width) + gutter)))
+        .style("top",    px(gutter + row(orientation, i) * (rowHeight(orientation, height) + gutter)))
+        .style("width",  px(columnWidth(orientation, width)))
+        .style("height", px(rowHeight(orientation, height)));
+        //.classed("top", row(orientation, i) == 0)
+        //.classed("bottom", row(orientation, i) > 0);
+    }
+    
+    function update(map) {
+      d3.select("body").selectAll(".map-container")
+        .data(maps.features)
+        .each(setPosition);
+    }
+    
+    window.onresize = update; 
+    
+	</script>
+</body>
+</html>

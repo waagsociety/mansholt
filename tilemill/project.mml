@@ -1,0 +1,55 @@
+{
+  "bounds": [
+    3.2986,
+    50.6947,
+    7.2647,
+    53.5403
+  ],
+  "center": [
+    4.9544,
+    52.2855,
+    14
+  ],
+  "format": "png8",
+  "interactivity": false,
+  "minzoom": 8,
+  "maxzoom": 15,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "extent": [
+        3.35969656704632,
+        50.7504196177014,
+        7.22435841325689,
+        53.4954151567479
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT * FROM gewaspercelen) g",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "3.35969656704632,50.7504196177014,7.22435841325689,53.4954151567479",
+        "host": "localhost",
+        "port": "5432",
+        "user": "postgres",
+        "password": "postgres",
+        "dbname": "agriculture"
+      },
+      "id": "gewaspercelen",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "gewaspercelen"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Gewassen",
+  "description": "",
+  "attribution": ""
+}

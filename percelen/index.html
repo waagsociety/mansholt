@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Gewaspercelen</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="old.css" />
+	<link rel="stylesheet" href="leaflet.css" />
+	<script src="d3.min.js"></script>
+	<script src="leaflet.js"></script>
+</head>
+<body>
+	<div id="map"></div>
+  <span id="close" class="close"></span>
+  <div id="box">
+    <div> 
+      <div id="info">
+        <h2>Info</h2>
+        <p>Alle 772,865 landbouwpercelen in Nederland! Basis Registratie Percelen</p>
+      </div>
+      <div id="legend">
+        <h2>Legenda</h2>        
+        <table>     
+        </table>
+      </div>
+      <div id="data">
+        <h2>Data</h2>
+        <table class="data-table">
+          <tr><td class="key">Gewas:</td><td class="value" id="gewas"></td></tr>
+        </table>
+      </div>  
+      <div id="waag">        
+        <a href="#52.3732,4.9003,16"><img src="images/waag.png" /></a>
+      </div>
+    </div>
+  <div>
+	<script>
+  
+    var legend = [
+      {
+        "category": "default",    
+        "color": "#2d2d2d",
+        "title": "Overig"
+      },
+      {
+        "category": "gras",        
+        "color": "#8dd3c7",
+        "title": "Gras"
+      },
+      {
+        "category": "aardappelen",
+        "color": "#ffffb3",
+        "title": "Aardappelen"
+      },
+      {
+        "category": "bonen",  
+        "color": "#bebada",
+        "title": "Bonen"
+      },
+      {
+        "category": "bos",        
+        "color": "#fb8072",
+        "title": "Bos"
+      },
+      {
+        "category": "mais",          
+        "color": "#80b1d3",
+        "title": "Maïs"
+      },
+      {
+        "category": "bloemen",
+        "color": "#fdb462",
+        "title": "Bloemen"
+      },
+      {
+        "category": "granen",      
+        "color": "#b3de69",
+        "title": "Granen"
+      },
+      {
+        "category": "erwten",       
+        "color": "#fccde5",
+        "title": "Erwten"
+      },
+      {
+        "category": "uien",       
+        "color": "#bc80bd",
+        "title": "Uien"
+      },
+      {
+        "category": "fruit",        
+        "color": "#ccebc5",
+        "title": "Fruit"
+      }
+    ];
+  
+  
+  
+  
+  
+  
+    var radius = 100;
+    
+    disableHashChange = false;
+    
+		var map = L.map('map', {
+			minZoom: 8,
+			maxZoom: 16
+		});
+    
+    var buildingsTileUrl = "http://tiles.citysdk.waag.org/v2/bag/{z}/{x}/{y}.png";
+    var agricultureTileUrl = "http://tiles.citysdk.waag.org/v2/gewaspercelen/{z}/{x}/{y}.png";   
+    
+		L.tileLayer(buildingsTileUrl, {
+      attributionControl: false
+		});
+
+		L.tileLayer(agricultureTileUrl, {
+      attributionControl: false
+		}).addTo(map);
+
+    map.setMaxBounds([
+      [48, 0],
+      [57, 10]
+    ]);
+       
+    map.setView([52.3674, 4.915], 11);
+    
+    map.on('moveend', function(e) {
+      var lat = roundLatLon(map.getCenter().lat);
+      var lon = roundLatLon(map.getCenter().lng);
+      var zoom = map.getZoom();
+            
+      disableHashChange = true;      
+      window.location.hash = [lat, lon, zoom].join(",");
+    });
+        
+    map.on('click', function(e) {
+      var lat = e.latlng.lat;        
+      var lon = e.latlng.lng;
+        
+      var pandUrl = "http://api.citysdk.waag.org/nodes?lat=" + lat + "&lon=" + lon + "&layer=brp.gewaspercelen&per_page=1&radius=" + radius;
+      
+      d3.json(pandUrl, function(json) {
+        
+                
+        if (json.status === "success" && json.results.length > 0) {
+          var data = json.results[0].layers["brp.gewaspercelen"].data;
+          d3.select("#gewas").html(data.gewas);
+        }
+               
+      });      
+        
+    });
+    
+    // $("#close").on("click", function() {
+    //     $("#box").fadeToggle();
+    //     $("#close").toggleClass("closed");
+    // });
+        
+    window.onhashchange = function() {
+      if (!disableHashChange) {
+        var hash = window.location.hash.split(",");
+        if (hash.length == 3) {
+          var lat = parseFloat(hash[0].substring(1)); // Remove "#"
+          var lon = parseFloat(hash[1]);
+          var zoom = parseInt(hash[2]);
+        
+          map.setView([lat, lon], zoom);
+        
+        }
+      }
+      disableHashChange = false;
+    }
+    
+    window.onhashchange();    
+    
+    function roundLatLon(l) {
+      return Math.round(l * 10000) / 10000;
+    }
+    
+    function formatNumber(x) {
+      x = x.toString();
+      var pattern = /(-?\d+)(\d{3})/;
+      while (pattern.test(x))
+        x = x.replace(pattern, "$1,$2");
+      return x;
+    }
+  
+	</script>
+</body>
+</html>
