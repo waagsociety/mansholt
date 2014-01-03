@@ -1,17 +1,16 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Mansholt, Landschap in Perspectief</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<link rel="stylesheet" href="index.css" />
-	<link rel="stylesheet" href="leaflet.css" />
+	<link rel="stylesheet" href="../style.css" />
+	<link rel="stylesheet" href="../leaflet.css" />
   <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
-  
-	<script src="d3.min.js"></script>
-	<script src="leaflet.js"></script>
+	<script src="../d3.min.js"></script>
+	<script src="../leaflet.js"></script>
 </head>
 <body>
-  <!-- <h1>Mansholt, Landschap in Perspectief</h1> -->
 	<script>
     var maps;
     var gutter = 5;
@@ -48,9 +47,12 @@
     
       var header = container
         .append("a")
-          .attr("href", function (d, i) { return "map.html#" + i})
+          .attr("href", function (d, i) { return "map/#" + i})
         .append("div")
-          .attr("class", "map-header");  
+          .attr("class", "map-header")
+        .append("div")
+          .attr("class", "map-header-wrapper");  
+
           
       header.append("h2")
           .html(function(d) { return d.properties.title; });

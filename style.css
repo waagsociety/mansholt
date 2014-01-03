@@ -50,6 +50,10 @@ h2 {
   height: auto;
 }
 
+.map-header .map-header-wrapper {
+  padding: 8px;
+}
+
 .map-container.top .map-header {
   top: 0;
 }
@@ -71,7 +75,6 @@ a .map-header h2 {
   text-decoration: underline;
 }
 
-
 a,
 a:hover,
 a:visited {
@@ -84,4 +87,23 @@ a:visited {
 
 .map-container:hover .map-header {
   display: block;
+}
+
+#single-map {
+  width: 66%;
+  height: 100%;
+}
+
+#sidebar {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 34%;
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 18px;
+}
+
+#sidebar li {
+  padding: 20px;
 }
