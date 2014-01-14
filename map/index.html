@@ -22,6 +22,10 @@
       <div class="map-header-wrapper"><h2>Terug</h2><p><span class="link">naar beginscherm</span><span>←</span></p></div>
     </div>
   </a>
+
+  <!-- <div class="map-header">
+    <div class="map-header-wrapper"><h2>Gewassen</h2><p><span class="link">aan | uit</span></p></div>
+  </div> -->
   
   <div id="single-map-container">
     <div id="single-map">
@@ -173,8 +177,14 @@
     
     var disableMapChangeTimeout,
         disableTextChangeTimeout;
+        
+    var inactivityTimeout;
     
     function textChange() {
+      if (exhibition) {
+        setInactivityTimeout()
+      }
+      
       disableTextChange = true;
            
       var closestFeature,
@@ -203,6 +213,9 @@
     }
     
     function mapChange() {
+      if (exhibition) {
+        setInactivityTimeout()
+      }
       if (map.getZoom() >= 11) {
         disableMapChange = true;
         
@@ -285,24 +298,35 @@
         setMap(index);
         setText(index);
       } else {
-          map.setView([52.0035,5.1114], 10);
+        map.setView([52.0035,5.1114], 10);
       }      
       
-      
     });
-    
+        
     function scrollTopTween(scrollTop) { 
       return function() { 
         var i = d3.interpolateNumber(this.scrollTop, scrollTop); 
           return function(t) { this.scrollTop = i(t); }; 
       }; 
-    }    
+    }
+    
+    function setInactivityTimeout() {
+      clearInterval(inactivityTimeout);    
+      inactivityTimeout = setInterval(function() { 
+        window.location.href = "../" + (exhibition ? "#exhibition" : "");
+      }, 2 * 60 * 1000);
+    }
     
     var hash = window.location.hash.substring(1);
     if (hash.split("/").indexOf("exhibition") >= 0) {
       exhibition = true;
       d3.select("#introduction").remove();
       d3.select("a#back").attr("href", "../#exhibition");
+      
+      d3.select("body").on("mousemove", setInactivityTimeout);
+      d3.select("body").on("mousedown", setInactivityTimeout);
+      d3.select("body").on("keypress", setInactivityTimeout);
+      
     }
     
 	</script>
