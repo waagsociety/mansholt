@@ -31,20 +31,14 @@ h2 {
   z-index: 1024;
   display: block;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: 15px;
+  left: 15px;
   background-color: white;
   padding: 8px 15px;
 }
 
-#back {
-  z-index: 1024;
+#back .map-header {
   display: block;
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  background-color: white;
-  padding: 6px 9px;
 }
 
 .leaflet-container {
@@ -66,13 +60,17 @@ h2 {
   display: none;
   z-index: 999;
   background-color: white;
-  width: 100%;
   position: absolute;
   height: auto;
+  
+  /*width: 100%;*/
+  
+  margin: 15px;
 }
 
 .map-header .map-header-wrapper {
-  padding: 3px;
+  /*padding: 3px;*/
+  padding: 5px 10px;
 }
 
 .map-container.top .map-header {
@@ -97,7 +95,6 @@ a {
 }*/
 
 .header h3,
-#back a,
 a .map-header span.link {
   text-decoration: underline;
 }
@@ -165,10 +162,6 @@ a:visited {
 #sidebar .caption {
   display: block;
   margin-bottom: 20px;
-}
-
-#back a {
-  padding-left: 6px;
 }
 
 #introduction,
