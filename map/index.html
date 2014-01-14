@@ -5,11 +5,11 @@
   <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<link rel="stylesheet" href="../style.css" />
-	<link rel="stylesheet" href="../leaflet.css" />
+	<link rel="stylesheet" href="../css/style.css" />
+	<link rel="stylesheet" href="../css/leaflet.css" />
   <!-- <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'> -->  
-	<script src="../d3.min.js"></script>
-	<script src="../leaflet.js"></script>
+	<script src="../js/d3.min.js"></script>
+	<script src="../js/leaflet.js"></script>
 </head>
 <body>
   <div id="single-map">
@@ -71,7 +71,7 @@
           De landbouw verliest geleidelijk haar dominante positie op het platteland en legt het af tegen stedelijke belangen. Een voorbeeld is de ruilverkaveling Waterland waarbij het handhaven van landschappen en aanleggen van recreatievoorzieningen een grote rol speelt. Met de totstandkoming van de Landinrichtingswet in 1985 wordt het tijdperk van de ruilverkavelingen definitief afgesloten.
         </p>
         <p>
-          <img src="../media/waterland_small.jpg" title="Waterland"/>
+          <img src="../media/waterland_map_small.jpg" title="Waterland"/>
           Beeld: WUR Speciale Collecties
         </p>
       </li>
@@ -123,8 +123,8 @@
         }          
       });
   
-      // Pan map to closest feature
-      map.setView(closestFeature.geometry.coordinates, closestFeature.properties.zoom);
+      // Pan map to closest feature      
+      map.setView([closestFeature.geometry.coordinates[1], closestFeature.geometry.coordinates[0]], closestFeature.properties.zoom);
       window.location.hash = index;
     }
     
