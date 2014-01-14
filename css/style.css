@@ -117,11 +117,19 @@ a:visited {
   display: block;
 }
 
-#single-map {
+#single-map-container {
   position: absolute;
   left: 0;
   top: 0;
   right: 580px;
+  bottom: 0;
+  margin: 5px;
+}
+
+
+#single-map {
+  position: absolute;
+  width: 100%;
   height: 100%;
 }
 
