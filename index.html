@@ -11,7 +11,19 @@
 	<script src="leaflet.js"></script>
 </head>
 <body>
+  <div class="header" id="main-header">
+    <h1>Mansholt, Landschap in Perspectief</h1>
+    <h3><a href="http://www.bureau-europa.nl/nl/manifestations/mansholt_landscape_in_perspective/">18 januari – 6 april 2014, Bureau Europa, Maastricht</a></h3>
+  </div>
+    
 	<script charset="utf-8">
+  
+    // ## TODO:
+    //  - Zes: hovers ook bij 'interactie met kaart'.
+    //  - Lettertypes, kleuren
+    //  - Plaatjes (en lightboxjes)
+    //  - Gewassenkaart met nieuwe categoriën  
+  
     var maps;
     var gutter = 5;
     
@@ -56,8 +68,11 @@
           
       header.append("h2")
           .html(function(d) { return d.properties.title; });
-      header.append("p")    
-          .html(function(d) { return d.properties.description; });
+          
+      var p = header.append("p")
+      
+      p.append("span").attr("class", "link").html("kaart en details");
+      p.append("span").html("→");      
           
       container.append("div")
           .attr("class", "map")
@@ -65,13 +80,12 @@
           .each(function(d, i) {              
             var map = L.map('map' + i, {
               minZoom: 8,
-              maxZoom: 16,
+              maxZoom: 15,
               zoomControl: false
             });
 
             map.attributionControl.setPrefix('');
           
-            //var agricultureTileUrl = "http://127.0.0.1:20008/tile/gewaspercelen/{z}/{x}/{y}.png?updated=1386597158000&metatile=1&scale=1";
             var agricultureTileUrl = "http://tiles.citysdk.waag.org/v2/mansholt/{z}/{x}/{y}.png";
             L.tileLayer(agricultureTileUrl, {
                   attributionControl: false

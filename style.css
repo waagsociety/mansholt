@@ -26,6 +26,16 @@ h2 {
   font-size: 20px;
 }
 
+#main-header {
+  z-index: 1024;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: white;
+  padding: 8px 15px;
+}
+
 .leaflet-container {
   background-color: white !important;
 }
@@ -51,7 +61,7 @@ h2 {
 }
 
 .map-header .map-header-wrapper {
-  padding: 8px;
+  padding: 3px;
 }
 
 .map-container.top .map-header {
@@ -71,7 +81,12 @@ a {
   text-decoration: none;
 }
 
-a .map-header h2 {
+/*a .map-header h2 {
+  text-decoration: underline;
+}*/
+
+.header h3,
+a .map-header span.link {
   text-decoration: underline;
 }
 
@@ -82,6 +97,10 @@ a:visited {
 }
 
 .map-header h2 {
+  margin-right: 5px;
+}
+
+.map-header span {
   margin-right: 5px;
 }
 

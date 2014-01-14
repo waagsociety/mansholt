@@ -4,14 +4,14 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Fletum, Wieringermeer",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "zoom": 13
+        "title": "Wieringermeer",
+        "name": "wieringermeer",
+        "zoom": 12
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          52.7853,5.0238
+          52.8123,4.9984
         ]
       }
     },
@@ -19,13 +19,13 @@
       "type": "Feature",
       "properties": {
         "title": "Walcheren",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "name": "walcheren",
         "zoom": 13
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          51.5203,3.5355
+51.5304,3.4990
         ]
       }
     },
@@ -33,7 +33,7 @@
       "type": "Feature",
       "properties": {
         "title": "Land van Maas en Waal",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "name": "landvanmaasenwaal",
         "zoom": 13
       },
       "geometry": {
@@ -47,7 +47,7 @@
       "type": "Feature",
       "properties": {
         "title": "Waterland",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "name": "waterland",
         "zoom": 13
       },
       "geometry": {
@@ -60,28 +60,28 @@
     {
       "type": "Feature",
       "properties": {
-        "title": "Postelsedijk 15, Reusel",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "zoom": 13
+        "title": "De Bovenlanden",
+        "name": "debovenlanden",
+        "zoom": 14
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          51.3211,5.1737
+          52.1725,4.8855
         ]
       }
     },
     {
       "type": "Feature",
       "properties": {
-        "title": "Plot GZ 59 West",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "title": "Klavertje 4",
+        "name": "klavertje4",
         "zoom": 13
       },
       "geometry": {
         "type": "Point",
         "coordinates": [
-          52.4809,5.6161
+          51.4117,6.0891
         ]
       }
     }
