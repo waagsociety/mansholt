@@ -110,7 +110,10 @@ a:visited {
 }
 
 #single-map {
-  width: 66%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 580px;
   height: 100%;
 }
 
@@ -118,12 +121,18 @@ a:visited {
   position: absolute;
   right: 0;
   top: 0;
-  width: 34%;
+  width: 580px;
   height: 100%;
   overflow-y: scroll;
   font-size: 18px;
 }
 
-#sidebar li {
-  padding: 20px;
+#sidebar p, #sidebar h2 {
+  padding: 10px 20px;
+}
+
+#sidebar img, 
+#sidebar .caption {
+  margin-left: 15px;
+  font-size: 13px;
 }
