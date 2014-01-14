@@ -15,6 +15,9 @@
 
 // bieten, zaden, hennep, heide, soja
 
+//@outlines: rgb(30, 0, 255);
+@outlines: rgb(240, 0, 3);
+
 Map {
 	background-color: white;
 }
@@ -74,4 +77,21 @@ Map {
   [category="bos"] {
     polygon-fill: @bos;
   }*/
+}
+
+.outlines {
+  line-color: @outlines;
+  line-width: 2px;
+  [zoom=15] {
+    line-width: 3px;
+  }
+  [zoom=14] {
+    line-width: 2.5px;
+  }
+  [zoom=9] {
+    line-width: 1.7px;
+  }
+  [zoom=8] {
+    line-width: 1.2px;
+  }
 }
