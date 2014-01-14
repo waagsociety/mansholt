@@ -1,3 +1,3 @@
 # Mansholt, Landschap in Perspectief
 
-Kaartapplicatie voor aankomende tentoonstelling
+http://www.bureau-europa.nl/nl/manifestations/mansholt_landscape_in_perspective/
