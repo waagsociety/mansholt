@@ -188,7 +188,7 @@
       clearInterval(disableTextChangeTimeout);    
       disableTextChangeTimeout = setInterval(function(){ 
         disableTextChange = false;
-      }, 1000);
+      }, 1800);
   
       if (!disableMapChange) {
         setMap(index);
@@ -215,7 +215,7 @@
         clearInterval(disableMapChangeTimeout);    
         disableMapChangeTimeout = setInterval(function(){ 
           disableMapChange = false;
-        }, 1000);
+        }, 1800);
         
         if (!disableTextChange) {
           setText(index);
@@ -226,7 +226,7 @@
     
     function setText(i) {
       d3.select("#sidebar").transition()
-          .duration(1000)
+          .duration(1200)
           .tween("tween", scrollTopTween(maps.features[i].properties.offsetTop));          
     }
 
