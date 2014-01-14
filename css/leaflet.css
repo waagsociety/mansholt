@@ -176,7 +176,7 @@
 	outline: 0;
 	}
 .leaflet-container a {
-	color: #0078A8;
+	color: black;
 	}
 .leaflet-container a.leaflet-active {
 	outline: 2px solid orange;
