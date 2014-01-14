@@ -31,7 +31,7 @@
 //heide
 
 Map {
-	background-color: white;
+	background-color: black;
 }
 
 #gewaspercelen {
