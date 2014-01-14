@@ -169,3 +169,8 @@ a:visited {
 /*#sidebar li:not(:last-child) { 
   padding-bottom: 250px;
 }*/
+
+#waag-mini {
+  top: 2px;
+  position: relative;
+}
