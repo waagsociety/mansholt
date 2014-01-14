@@ -1,5 +1,4 @@
-@default:       #2d2d2d;
-
+@overig:       #2d2d2d;
 @gras:          #8dd3c7;
 @aardappelen:   #ffffb3;
 @mais:          #80b1d3;
@@ -18,7 +17,7 @@ Map {
 }
 
 #gewaspercelen {
- polygon-fill: @default;
+ polygon-fill: @overig;
 
   [category="gras"] {
     polygon-fill: @gras;

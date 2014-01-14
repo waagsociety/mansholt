@@ -23,9 +23,15 @@
     </div>
   </a>
 
-  <!-- <div class="map-header">
-    <div class="map-header-wrapper"><h2>Gewassen</h2><p><span class="link">aan | uit</span></p></div>
-  </div> -->
+  <a id="layers" href="#">
+    <div class="map-header">
+      <div class="map-header-wrapper"><h2>Gewassen</h2><p><span class="link">aan</span> | <span class="link disabled">uit</span></p></div>
+    </div>
+  </a>
+  
+  <div id="legend" class="map-header">
+    <div class="map-header-wrapper"></div>
+  </div>  
   
   <div id="single-map-container">
     <div id="single-map">
@@ -178,6 +184,9 @@
     var disableMapChangeTimeout,
         disableTextChangeTimeout;
         
+    var tileLayerBlackWhite,
+        tileLayerColor;
+        
     var inactivityTimeout;
     
     function textChange() {
@@ -209,7 +218,9 @@
       if (!disableMapChange) {
         setMap(index);
       }
-      window.location.hash = maps.features[index].properties.name + (exhibition ? "/exhibition" : "");
+      if (index >= 0) {
+        window.location.hash = maps.features[index].properties.name + (exhibition ? "/exhibition" : "");
+      }      
     }
     
     function mapChange() {
@@ -255,8 +266,7 @@
         maps.features[i].geometry.coordinates[0]
         ], 
         maps.features[i].properties.zoom2);
-    }    
-
+    }
     
     d3.json("../maps.json", function(json) {
       
@@ -267,9 +277,14 @@
       });
 
       var waagAttribution = '<a href="http://www.waag.org" title="Institute for art, science &amp; technology">Waag Society <img id="waag-mini" src="../img/waag-mini.png" /></a>';
-      L.tileLayer("http://tiles.citysdk.waag.org/v2/mansholt/{z}/{x}/{y}.png", {
+      
+      tileLayerBlackWhite = L.tileLayer("http://tiles.citysdk.waag.org/v2/mansholt/{z}/{x}/{y}.png", {
         attribution: waagAttribution
-      }).addTo(map);      
+      }).addTo(map);
+      
+      tileLayerColor = L.tileLayer("http://tiles.citysdk.waag.org/v2/mansholt-crops/{z}/{x}/{y}.png", {
+        attribution: waagAttribution
+      });      
       
       maps = json;
       var li = d3.select("#sidebar").selectAll("li")
@@ -317,6 +332,18 @@
       }, 2 * 60 * 1000);
     }
     
+    d3.select("#layers").on("click", function() {
+      d3.selectAll("#layers .link").classed("disabled", function(d, i) {
+        var disabled = d3.select(this).classed("disabled");
+        if (i == 1) {
+          setCrops(disabled);
+        }        
+        return !disabled;
+      });
+      
+      d3.event.preventDefault();
+    });
+    
     var hash = window.location.hash.substring(1);
     if (hash.split("/").indexOf("exhibition") >= 0) {
       exhibition = true;
@@ -328,6 +355,40 @@
       d3.select("body").on("keypress", setInactivityTimeout);
       
     }
+    
+    function setCrops(enabled) {
+      if (enabled) {
+        map.addLayer(tileLayerColor);
+        map.removeLayer(tileLayerBlackWhite);
+        d3.select("#legend").style("display", "block");
+      } else {
+        map.addLayer(tileLayerBlackWhite);
+        map.removeLayer(tileLayerColor);
+        d3.select("#legend").style("display", "none");        
+      }
+      
+    }
+    
+    var crops = [
+      {"name": "gras", "title": "Gras"},
+      {"name": "aardappelen", "title": "Aardappelen"},
+      {"name": "mais", "title": "Maïs"},
+      {"name": "bloemen", "title": "Bloemen"},
+      {"name": "granen", "title": "Granen"},
+      {"name": "uien", "title": "Uien"},
+      {"name": "fruit", "title": "Fruit"},
+      {"name": "bieten", "title": "Bieten"},
+      {"name": "peulvruchten", "title": "Peulvruchten"},
+      {"name": "zaden", "title": "Zaden"},
+      {"name": "hennep", "title": "Hennep"},
+      {"name": "groenten", "title": "Groenten"},
+      {"name": "overig", "title": "Overig"}
+    ];   
+        
+    var table = d3.select("#legend div").append("table");
+    var tr = table.selectAll("tr").data(crops).enter().append("tr");
+    tr.append("td").attr("class", function(d) { return d.name; });
+    tr.append("td").html(function(d) { return d.title; });
     
 	</script>
 </body>

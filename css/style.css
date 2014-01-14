@@ -37,7 +37,8 @@ h2 {
   padding: 8px 15px;
 }
 
-#back .map-header {
+#back .map-header,
+#layers .map-header {
   display: block;
 }
 
@@ -97,6 +98,10 @@ a {
 .header h3,
 a .map-header span.link {
   text-decoration: underline;
+}
+
+a .map-header span.link.disabled {
+  text-decoration: none;
 }
 
 a,
@@ -181,3 +186,38 @@ a:visited {
   top: 2px;
   position: relative;
 }
+
+#layers .map-header, 
+#legend.map-header {
+  width: 187px;
+}
+
+#layers .map-header {
+  top: 45px;
+}
+
+#legend.map-header {
+  top: 81px;
+}
+
+#legend table  {
+border-spacing: 3px;
+}
+
+#legend table tr td:first-child {
+  width: 30px;
+}
+
+.overig       { background-color: #2d2d2d; }
+.gras         { background-color: #8dd3c7; }
+.aardappelen  { background-color: #ffffb3; }
+.mais         { background-color: #80b1d3; }
+.bloemen      { background-color: #fdb462; }
+.granen       { background-color: #b3de69; }
+.uien         { background-color: #bc80bd; }
+.fruit        { background-color: #ccebc5; }
+.bieten       { background-color: #ffed6f; }
+.peulvruchten { background-color: #cdad0d; }
+.zaden        { background-color: #bebada; }
+.hennep       { background-color: #fccde5; }
+.groenten     { background-color: #fb8072; }
