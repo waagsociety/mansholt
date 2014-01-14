@@ -3,7 +3,7 @@ require 'sequel'
 
 crops = JSON.parse(File.read('./crops.json'),{:symbolize_names => true}) 
 
-DB = Sequel.connect("postgres://postgres:postgres@localhost/landbouw")
+DB = Sequel.connect("postgres://postgres:postgres@localhost/agriculture")
 DB.transaction do
 
   crops.each do |crop|

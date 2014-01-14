@@ -2,61 +2,22 @@
 
 @gras:          #8dd3c7;
 @aardappelen:   #ffffb3;
-@bonen:         #bebada;
-@bos:           #fb8072;
 @mais:          #80b1d3;
 @bloemen:       #fdb462;
 @granen:        #b3de69;
-@erwten:        #fccde5;
 @uien:          #bc80bd;
 @fruit:         #ccebc5;
-//#ffed6f
-//#2d2d2d
-
-// bieten, zaden, hennep, heide, soja
-
-//Van Jules:
-//gras
-//aardappelen
-//bieten
-//granen
-//mais
-//peulvruchten > soja, bonen, erwten, zaden
-//bloemen
-//fruit
-//hennep
-//uien
-//groeten > Groenten open grond (deze heeft nog geen eigen categorie)
-//bos
-//heide
+@bieten:        #ffed6f;
+@peulvruchten:  #cdad0d;
+@zaden:         #bebada;
+@hennep:        #fccde5;
+@groenten:      #fb8072;
 
 Map {
-	background-color: black;
+  background-color: black;
 }
 
 #gewaspercelen {
-  /*polygon-fill: black;
-  line-color: white;
-  line-width: 0;
-  [zoom=10] {
-    line-width: 0.02px;
-  }
-  [zoom=11] {
-    line-width: 0.05px;
-  }
-  [zoom=12] {
-    line-width: 0.2px;
-  }
-  [zoom=13] {
-    line-width: 0.5px;
-  }
-  [zoom=14] {
-    line-width: 0.7px;
-  }
-  [zoom=15] {
-    line-width: 0.9px;
-  }*/
-  
  polygon-fill: @default;
 
   [category="gras"] {
@@ -64,9 +25,6 @@ Map {
   }
   [category="aardappelen"] {
     polygon-fill: @aardappelen;
-  }
-  [category="bonen"] {
-    polygon-fill: @bonen;
   }
   [category="bloemen"] {
     polygon-fill: @bloemen;
@@ -77,8 +35,8 @@ Map {
   [category="granen"] {
     polygon-fill: @granen;
   }
-  [category="erwten"] {
-    polygon-fill: @erwten;
+  [category="peulvruchten"] {
+    polygon-fill: @peulvruchten;
   }  
   [category="fruit"] {
     polygon-fill: @fruit;
@@ -86,24 +44,31 @@ Map {
   [category="uien"] {
     polygon-fill: @uien;
   }  
-  [category="bos"] {
-    polygon-fill: @bos;
+  [category="groenten"] {
+    polygon-fill: @groenten;
+  }
+  [category="zaden"] {
+    polygon-fill: @zaden;
+  }
+  [category="hennep"] {
+    polygon-fill: @hennep;
   }
 }
 
 .outlines {
-  line-color: black;
-  line-width: 2px;
+  line-color: white;
+  line-opacity: 0.9;
+  line-width: 2.3px;
   [zoom=15] {
-    line-width: 3px;
+    line-width: 3.5px;
   }
   [zoom=14] {
-    line-width: 2.5px;
+    line-width: 3px;
   }
   [zoom=9] {
-    line-width: 1.7px;
+    line-width: 2px;
   }
   [zoom=8] {
-    line-width: 1.2px;
+    line-width: 1.8px;
   }
 }

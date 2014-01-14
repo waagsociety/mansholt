@@ -67,22 +67,22 @@
     {
         "name": "Bonen, bruine",
         "code": 242,
-        "category": "bonen"
+        "category": "peulvruchten"
     },
     {
         "name": "Bonen, tuin- (droog te oogsten) (geen consumptie)",
         "code": 853,
-        "category": "bonen"
+        "category": "peulvruchten"
     },
     {
         "name": "Bonen, tuin- (groen te oogsten)",
         "code": 854,
-        "category": "bonen"
+        "category": "peulvruchten"
     },
     {
         "name": "Bonen, veld-(oa duive-, paarde-, wierbonen)(droog te oogsten",
         "code": 243,
-        "category": "bonen"
+        "category": "peulvruchten"
     },
     {
         "name": "Boomkwekerij en vaste planten",
@@ -132,12 +132,12 @@
     {
         "name": "Erwten inclusief schokkers (droog te oogsten)",
         "code": 2650,
-        "category": "erwten"
+        "category": "peulvruchten"
     },
     {
         "name": "Erwten, groene/gele, groen te oogsten",
         "code": 244,
-        "category": "erwten"
+        "category": "peulvruchten"
     },
     {
         "name": "Faunaranden, bouwland",
@@ -207,7 +207,7 @@
     {
         "name": "Groenten open grond (inclusief groentezaden)",
         "code": 672,
-        "category": ""
+        "category": "groenten"
     },
     {
         "name": "Haver",
@@ -227,7 +227,7 @@
     {
         "name": "Kapucijners (en grauwe erwten)",
         "code": 241,
-        "category": "erwten"
+        "category": "peulvruchten"
     },
     {
         "name": "Karwijzaad (oogst dit jaar)",
@@ -332,7 +332,7 @@
     {
         "name": "Sojabonen",
         "code": 665,
-        "category": "soja"
+        "category": "peulvruchten"
     },
     {
         "name": "Tagetes (zand, loss) (geen groene braak)",
