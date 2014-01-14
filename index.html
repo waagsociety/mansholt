@@ -20,9 +20,16 @@
 	<script charset="utf-8">
   
     // ## TODO:
+    //  - #name afmaken
     //  - Zes: hovers ook bij 'interactie met kaart'.
-    //  - interactie tussen kaart en tekst beter (leaflet distance!)
     //  - Gewassenkaart met nieuwe categoriën  
+    
+    var exhibition = false;
+    var hash = window.location.hash.substring(1);
+    if (hash === "exhibition") {
+      exhibition = true;
+      d3.select("#main-header").remove();
+    }
   
     var maps;
     var gutter = 5;
@@ -59,7 +66,9 @@
     
       var header = container
         .append("a")
-          .attr("href", function (d, i) { return "map/#" + i})
+          .attr("href", function (d, i) { 
+            return "map/#" + d.properties.name + (exhibition ? "/exhibition" : "");
+          })
         .append("div")
           .attr("class", "map-header")
         .append("div")
@@ -116,12 +125,7 @@
     }
     
     window.onresize = update;
-    
-    var hash = window.location.hash.substring(1);
-    if (hash == "exhibition") {
-      d3.select("#main-header").remove();
-    }
-    
+        
 	</script>
 </body>
 </html>

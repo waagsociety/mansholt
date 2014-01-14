@@ -160,6 +160,8 @@
     var map,
         maps;
         
+    var exhibition = false;
+        
     var disableMapChange = false,
         disableTextChange = false;
     
@@ -175,10 +177,9 @@
 
       var scrollTop = d3.select("#sidebar").property("scrollTop");        
   
-      maps.features.forEach(function(d, i) {                  
+      maps.features.forEach(function(d, i) {
         var distance = Math.abs(scrollTop - d.properties.offsetTop);
         if (distance < smallestDistance) {
-          closestFeature = d;
           smallestDistance = distance;
           index = i;
         }          
@@ -190,10 +191,9 @@
       }, 1000);
   
       if (!disableMapChange) {
-        // Pan map to closest feature      
-        map.setView([closestFeature.geometry.coordinates[1], closestFeature.geometry.coordinates[0]], closestFeature.properties.zoom);
+        setMap(index);
       }
-      window.location.hash = index;      
+      window.location.hash = maps.features[index].properties.name + (exhibition ? "/exhibition" : "");
     }
     
     function mapChange() {
@@ -218,13 +218,26 @@
         }, 1000);
         
         if (!disableTextChange) {
-          d3.select("#sidebar").transition()
-              .duration(1000)
-              .tween("tween", scrollTopTween(maps.features[index].properties.offsetTop));
+          setText(index);
         }
       
       }   
     }
+    
+    function setText(i) {
+      d3.select("#sidebar").transition()
+          .duration(1000)
+          .tween("tween", scrollTopTween(maps.features[i].properties.offsetTop));          
+    }
+
+    function setMap(i) {          
+      map.setView([
+        maps.features[i].geometry.coordinates[1], 
+        maps.features[i].geometry.coordinates[0]
+        ], 
+        maps.features[i].properties.zoom);
+    }    
+
     
     d3.json("../maps.json", function(json) {
       
@@ -252,17 +265,23 @@
       map.on('moveend', mapChange);
       d3.select("#sidebar").on("scroll", textChange);
       
-      // currentMapIndex = 0;
-      // var hash = window.location.hash;
-      // 
-      // d3.select("#sidebar").on("scroll", panTo);
-      // if (hash.substring(1)) {
-      //    currentMapIndex = parseInt(hash.substring(1));         
-      //    scrollTo(currentMapIndex);
-      // }
-      // 
-      //mapChange();
-      map.setView([52.17214199566738,4.8778438568115225], 13);
+      var index = -1,
+          hash = window.location.hash.substring(1),
+          name = hash.split("/")[0];
+          
+      maps.features.forEach(function(d, i) {
+        if (d.properties.name === name) {
+          index = i;
+        }
+      });
+      
+      if (index >= 0) {
+        setMap(index);
+        setText(index);
+      } else {
+          map.setView([52.0035,5.1114], 10);
+      }      
+      
       
     });
     
@@ -273,12 +292,11 @@
       }; 
     }    
     
-   
     var hash = window.location.hash.substring(1);
-    if (hash == "exhibition") {
-      // Remove title and introduction, add #exibition to back url.
+    if (hash.split("/").indexOf("exhibition") >= 0) {
+      exhibition = true;
       d3.select("#introduction").remove();
-      d3.select("#back a").attr("href", "../#exibition");
+      d3.select("#back a").attr("href", "../#exhibition");
     }
     
 	</script>
