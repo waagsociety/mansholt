@@ -162,13 +162,19 @@ a:visited {
   font-size: 13px;
 }
 
+#sidebar .caption {
+  display: block;
+  margin-bottom: 20px;
+}
+
 #back a {
   padding-left: 6px;
 }
 
-/*#sidebar li:not(:last-child) { 
-  padding-bottom: 250px;
-}*/
+#introduction,
+#sidebar li { 
+  padding-bottom: 50px;
+}
 
 #waag-mini {
   top: 2px;
