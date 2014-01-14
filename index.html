@@ -115,7 +115,12 @@
         .each(setPosition);
     }
     
-    window.onresize = update; 
+    window.onresize = update;
+    
+    var hash = window.location.hash.substring(1);
+    if (hash == "exhibition") {
+      d3.select("#main-header").remove();
+    }
     
 	</script>
 </body>
