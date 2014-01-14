@@ -164,6 +164,10 @@ a:visited {
   font-size: 13px;
 }
 
+#back a {
+  padding-left: 6px;
+}
+
 /*#sidebar li:not(:last-child) { 
   padding-bottom: 250px;
 }*/
