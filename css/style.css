@@ -37,6 +37,16 @@ h2 {
   padding: 8px 15px;
 }
 
+#back {
+  z-index: 1024;
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-color: white;
+  padding: 6px 9px;
+}
+
 .leaflet-container {
   background-color: white !important;
 }
@@ -87,6 +97,7 @@ a {
 }*/
 
 .header h3,
+#back a,
 a .map-header span.link {
   text-decoration: underline;
 }
@@ -127,8 +138,24 @@ a:visited {
   font-size: 18px;
 }
 
-#sidebar p, #sidebar h2 {
+
+#sidebar p, #sidebar h1, #sidebar h2, #sidebar h3 {
   padding: 10px 20px;
+}
+
+
+#sidebar h1 {
+  font-size: 30px;
+  padding-bottom: 0;
+}
+
+#sidebar h2 {
+  font-size: 23px;
+}
+
+#sidebar h3 {
+  font-size: 19px;
+  padding-top: 0;
 }
 
 #sidebar img, 
@@ -137,6 +164,6 @@ a:visited {
   font-size: 13px;
 }
 
-#sidebar li:not(:last-child) { 
+/*#sidebar li:not(:last-child) { 
   padding-bottom: 250px;
-}
+}*/
