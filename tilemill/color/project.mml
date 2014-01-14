@@ -1,0 +1,163 @@
+{
+  "bounds": [
+    3.2986,
+    50.6947,
+    7.2647,
+    53.5403
+  ],
+  "center": [
+    4.9544,
+    52.2855,
+    14
+  ],
+  "format": "png8",
+  "interactivity": false,
+  "minzoom": 8,
+  "maxzoom": 15,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "extent": [
+        3.35969656704632,
+        50.7504196177014,
+        7.22435841325689,
+        53.4954151567479
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(SELECT * FROM gewaspercelen WHERE gewas != 'Overige natuurterreinen') g",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "3.35969656704632,50.7504196177014,7.22435841325689,53.4954151567479",
+        "host": "localhost",
+        "port": "5432",
+        "user": "postgres",
+        "password": "postgres",
+        "dbname": "agriculture"
+      },
+      "id": "gewaspercelen",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "gewaspercelen"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        3.432875777757794,
+        51.43910703756095,
+        3.747580952377034,
+        51.59488167091771
+      ],
+      "id": "walcheren",
+      "class": "outlines",
+      "Datasource": {
+        "file": "/Users/bert/dev/checkouts/mansholt/outlines/walcheren.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "walcheren"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        4.876165057832088,
+        52.75137367960318,
+        5.114101974086611,
+        52.92489921427193
+      ],
+      "id": "wieringermeer",
+      "class": "outlines",
+      "Datasource": {
+        "file": "/Users/bert/dev/checkouts/mansholt/outlines/wieringermeer.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "wieringermeer"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        5.400116728363353,
+        51.80992023549604,
+        5.685177764592995,
+        51.90165204765534
+      ],
+      "id": "landvanmaasenwaal",
+      "class": "outlines",
+      "Datasource": {
+        "file": "/Users/bert/dev/checkouts/mansholt/outlines/landvanmaasenwaal.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "landvanmaasenwaal"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        5.984845161437988,
+        51.36025900157976,
+        6.145219802856444,
+        51.45602591523236
+      ],
+      "id": "klavertje4",
+      "class": "outlines",
+      "Datasource": {
+        "file": "/Users/bert/dev/checkouts/mansholt/outlines/klavertje4.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "klavertje4"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        4.843554496765137,
+        52.15405017214772,
+        4.904344081878662,
+        52.186115508935124
+      ],
+      "id": "debovenlanden",
+      "class": "outlines",
+      "Datasource": {
+        "file": "/Users/bert/dev/checkouts/mansholt/outlines/debovenlanden.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "debovenlanden"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        4.788730144500732,
+        52.3733394492594,
+        5.086498260498047,
+        52.538707139014655
+      ],
+      "id": "waterland",
+      "class": "outlines",
+      "Datasource": {
+        "file": "/Users/bert/dev/checkouts/mansholt/outlines/waterland.geojson"
+      },
+      "srs-name": "autodetect",
+      "srs": "",
+      "advanced": {},
+      "name": "waterland"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "Mansholt (color)",
+  "description": "",
+  "attribution": ""
+}

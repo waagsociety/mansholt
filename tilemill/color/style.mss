@@ -15,15 +15,27 @@
 
 // bieten, zaden, hennep, heide, soja
 
-//@outlines: rgb(30, 0, 255);
-@outlines: rgb(240, 0, 3);
+//Van Jules:
+//gras
+//aardappelen
+//bieten
+//granen
+//mais
+//peulvruchten > soja, bonen, erwten, zaden
+//bloemen
+//fruit
+//hennep
+//uien
+//groeten > Groenten open grond (deze heeft nog geen eigen categorie)
+//bos
+//heide
 
 Map {
 	background-color: white;
 }
 
 #gewaspercelen {
-  polygon-fill: black;
+  /*polygon-fill: black;
   line-color: white;
   line-width: 0;
   [zoom=10] {
@@ -43,11 +55,11 @@ Map {
   }
   [zoom=15] {
     line-width: 0.9px;
-  }
+  }*/
   
- /*polygon-fill: @default;*/
+ polygon-fill: @default;
 
- /* [category="gras"] {
+  [category="gras"] {
     polygon-fill: @gras;
   }
   [category="aardappelen"] {
@@ -76,11 +88,11 @@ Map {
   }  
   [category="bos"] {
     polygon-fill: @bos;
-  }*/
+  }
 }
 
 .outlines {
-  line-color: @outlines;
+  line-color: black;
   line-width: 2px;
   [zoom=15] {
     line-width: 3px;
