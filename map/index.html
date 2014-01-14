@@ -178,8 +178,8 @@
       var scrollTop = d3.select("#sidebar").property("scrollTop");        
   
       maps.features.forEach(function(d, i) {
-        var distance = Math.abs(scrollTop - d.properties.offsetTop);
-        if (distance < smallestDistance) {
+        var distance = scrollTop - d.properties.offsetTop;
+        if (Math.abs(distance) < smallestDistance && distance > -50) {
           smallestDistance = distance;
           index = i;
         }          
