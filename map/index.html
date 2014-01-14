@@ -256,7 +256,7 @@
       var li = d3.select("#sidebar").selectAll("li")
           .data(maps.features)          
           .each(function(d, i) {
-            maps.features[i].properties.offsetTop = this.offsetTop;
+            maps.features[i].properties.offsetTop = this.offsetTop + i * 20;
           });          
           
       li.select("h2")
