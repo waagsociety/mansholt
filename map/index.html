@@ -157,8 +157,10 @@
 	<script charset="utf-8">
     var map,
         maps;
+        
+    var disablePan = false;
     
-    function scroll() {
+    function panTo() {      
       var closestFeature,
           index,
           Δ = Number.POSITIVE_INFINITY;
@@ -174,10 +176,15 @@
         }          
       });
   
-      // Pan map to closest feature      
-      map.setView([closestFeature.geometry.coordinates[1], closestFeature.geometry.coordinates[0]], closestFeature.properties.zoom);
-      window.location.hash = index;
+      if(!disablePan) {
+        // Pan map to closest feature      
+        map.setView([closestFeature.geometry.coordinates[1], closestFeature.geometry.coordinates[0]], closestFeature.properties.zoom);
+      }
+      window.location.hash = index;      
     }
+    
+    var waagAttribution = '', //'<a href="http://www.waag.org" title="Institute for art, science &amp; technology">Waag Society <img id="waag-mini" src="images/waag-mini.png" /></a>',
+    
     
     d3.json("../maps.json", function(json) {
       
@@ -202,22 +209,54 @@
           });          
           
       li.select("h2")
-        .html(function(d) { return d.properties.title; });        
+        .html(function(d) { return d.properties.title; });      
+      
+      map.on('moveend', function(e) {
+        if (map.getZoom() >= 11) {
+          var center = map.getCenter();
+          var index,
+              Δ = Number.POSITIVE_INFINITY;
+          maps.features.forEach(function(d, i) {          
+            var latlng = L.latLng(d.geometry.coordinates[1], d.geometry.coordinates[0]);            
+            var δ = latlng.distanceTo(center);
+            if (δ < Δ) {
+              Δ = δ;
+              index = i;
+            } 
+          });
+          disablePan = true;
+          scrollTo(index);
+        }
+          
+      });      
       
       currentMapIndex = 0;
       var hash = window.location.hash;
 
+      d3.select("#sidebar").on("scroll", panTo);
       if (hash.substring(1)) {
-      console.log(parseInt(hash.substring(1)));
-         currentMapIndex = parseInt(hash.substring(1)); 
+         currentMapIndex = parseInt(hash.substring(1));         
+         scrollTo(currentMapIndex);
       }
-      d3.select("#sidebar").on("scroll", scroll).property("scrollTop", maps.features[currentMapIndex].properties.offsetTop);     
       
+      panTo();
       
-      
-      scroll();
-      
-    });    
+    });
+    
+    function scrollTopTween(scrollTop) { 
+      return function() { 
+        var i = d3.interpolateNumber(this.scrollTop, scrollTop); 
+          return function(t) { this.scrollTop = i(t); }; 
+      }; 
+    }    
+    
+    function scrollTo(i) {
+      d3.select("#sidebar").transition()
+          .duration(1000)
+          .tween("tween", scrollTopTween(maps.features[i].properties.offsetTop)).call(function() {
+            disablePan = false;
+          });
+    }
     
 	</script>
 </body>
