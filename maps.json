@@ -6,7 +6,8 @@
       "properties": {
         "title": "Wieringermeer",
         "name": "wieringermeer",
-        "zoom": 12
+        "zoom1": 12,
+        "zoom2": 12
       },
       "geometry": {
         "type": "Point",
@@ -21,7 +22,8 @@
       "properties": {
         "title": "Walcheren",
         "name": "walcheren",
-        "zoom": 14
+        "zoom1": 14,
+        "zoom2": 12
       },
       "geometry": {
         "type": "Point",
@@ -36,7 +38,8 @@
       "properties": {
         "title": "Land van Maas en Waal",
         "name": "landvanmaasenwaal",
-        "zoom": 13
+        "zoom1": 13,
+        "zoom2": 12
       },
       "geometry": {
         "type": "Point",
@@ -51,7 +54,8 @@
       "properties": {
         "title": "Waterland",
         "name": "waterland",
-        "zoom": 13
+        "zoom1": 13,
+        "zoom2": 12
       },
       "geometry": {
         "type": "Point",
@@ -66,7 +70,8 @@
       "properties": {
         "title": "De Bovenlanden",
         "name": "debovenlanden",
-        "zoom": 14
+        "zoom1": 14,
+        "zoom2": 14
       },
       "geometry": {
         "type": "Point",
@@ -81,7 +86,8 @@
       "properties": {
         "title": "Klavertje 4",
         "name": "klavertje4",
-        "zoom": 13
+        "zoom1": 13,
+        "zoom2": 13
       },
       "geometry": {
         "type": "Point",
