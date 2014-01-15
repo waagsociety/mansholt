@@ -23,6 +23,12 @@
     </div>
   </a>
 
+  <a id="toggle-text" href="#">
+    <div class="map-header">
+      <div class="map-header-wrapper"><h2>Tekst</h2><p><span class="link disabled">aan</span> | <span class="link">uit</span></p></div>
+    </div>
+  </a>
+
   <a id="layers" href="#">
     <div class="map-header">
       <div class="map-header-wrapper"><h2>Gewassen</h2><p><span class="link">aan</span> | <span class="link disabled">uit</span></p></div>
@@ -338,6 +344,18 @@
       }, 2 * 60 * 1000);
     }
     
+    d3.select("#toggle-text").on("click", function() {
+      d3.selectAll("#toggle-text .link").classed("disabled", function(d, i) {
+        var disabled = d3.select(this).classed("disabled");
+        if (i == 0) {
+          toggleText(disabled);
+        }        
+        return !disabled;
+      });
+      
+      d3.event.preventDefault();
+    });
+    
     d3.select("#layers").on("click", function() {
       d3.selectAll("#layers .link").classed("disabled", function(d, i) {
         var disabled = d3.select(this).classed("disabled");
@@ -362,6 +380,18 @@
       
     }
     
+    function toggleText(enabled) {
+      if (enabled) {
+        d3.select("#sidebar").style("display", "none");
+        d3.select("#single-map-container").style("right", "0");
+      } else {
+        disableMapChange = true;
+        d3.select("#sidebar").style("display", "block");
+        d3.select("#single-map-container").style("right", "580px");
+      }
+      map.invalidateSize();
+    }
+    
     function setCrops(enabled) {
       if (enabled) {
         map.addLayer(tileLayerColor);
@@ -371,8 +401,7 @@
         map.addLayer(tileLayerBlackWhite);
         map.removeLayer(tileLayerColor);
         d3.select("#legend").style("display", "none");
-      }
-      
+      }      
     }
     
     var crops = [

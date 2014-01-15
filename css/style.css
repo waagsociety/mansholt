@@ -38,6 +38,7 @@ h2 {
 }
 
 #back .map-header,
+#toggle-text .map-header,
 #layers .map-header {
   display: block;
 }
@@ -188,12 +189,16 @@ a:visited {
   width: 187px;
 }
 
-#layers .map-header {
+#toggle-text .map-header {
   top: 45px;
 }
 
+#layers .map-header {
+  top: 90px;
+}
+
 #legend.map-header {
-  top: 80px;
+  top: 120px;
 }
 
 #legend table  {

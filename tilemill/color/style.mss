@@ -11,6 +11,8 @@
 @groenten:      #58dfc8;
 @overig:        #dddddd;
 
+@outlines: rgb(240, 0, 3);
+
 Map {
   background-color: white;
 }
@@ -51,7 +53,7 @@ Map {
 }
 
 .outlines {
-  line-color: white;
+  line-color: @outlines;
   line-opacity: 0.9;
   line-width: 2.3px;
   [zoom=15] {
