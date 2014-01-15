@@ -172,6 +172,7 @@ a:visited {
 #sidebar .caption {
   display: block;
   margin-bottom: 20px;
+  font-style:italic;
 }
 
 #introduction,
