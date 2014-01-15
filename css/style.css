@@ -42,10 +42,6 @@ h2 {
   display: block;
 }
 
-.leaflet-container {
-  background-color: white !important;
-}
-
 .map-container {
   position: absolute;
 }
@@ -212,16 +208,17 @@ border-spacing: 3px;
   padding-left: 5px;
 }
 
-.overig       { background-color: #2d2d2d; }
-.gras         { background-color: #8dd3c7; }
-.aardappelen  { background-color: #ffffb3; }
-.mais         { background-color: #80b1d3; }
+.gras         { background-color: #b3de69; }
+.aardappelen  { background-color: #8e5816; }
+.mais         { background-color: #ffed6f; }
 .bloemen      { background-color: #fdb462; }
-.granen       { background-color: #b3de69; }
+.granen       { background-color: #8dd3c7; }
 .uien         { background-color: #bc80bd; }
 .fruit        { background-color: #ccebc5; }
-.bieten       { background-color: #ffed6f; }
-.peulvruchten { background-color: #cdad0d; }
+.bieten       { background-color: #80b1d3; }
+.peulvruchten { background-color: #ffffb3; }
 .zaden        { background-color: #bebada; }
 .hennep       { background-color: #fccde5; }
 .groenten     { background-color: #fb8072; }
+.overig       { background-color: #2d2d2d; }
+

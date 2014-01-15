@@ -275,6 +275,8 @@
         maxZoom: 15,
         zoomControl: false
       });
+      
+      d3.select("#single-map").style("background-color", "white");
 
       var waagAttribution = '<a href="http://www.waag.org" title="Institute for art, science &amp; technology">Waag Society <img id="waag-mini" src="../img/waag-mini.png" /></a>';
       
@@ -361,10 +363,12 @@
         map.addLayer(tileLayerColor);
         map.removeLayer(tileLayerBlackWhite);
         d3.select("#legend").style("display", "block");
+        d3.select("#single-map").style("background-color", "black");
       } else {
         map.addLayer(tileLayerBlackWhite);
         map.removeLayer(tileLayerColor);
-        d3.select("#legend").style("display", "none");        
+        d3.select("#legend").style("display", "none");
+        d3.select("#single-map").style("background-color", "white");        
       }
       
     }

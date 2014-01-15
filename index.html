@@ -20,7 +20,7 @@
 	<script charset="utf-8">
   
     // ## TODO:
-    //  - Zes: hovers ook bij 'interactie met kaart'.
+    //  - kleuren gewassenkaart afmaken.
     
     var exhibition = false;
     var hash = window.location.hash.substring(1);
@@ -91,6 +91,8 @@
               maxZoom: 15,
               zoomControl: false
             });
+            
+            d3.select("#map" + i).style("background-color", "white");
             
             map.on("mousemove", function() { setActiveMap(i); });
             map.on("dragstart", function() { lockActiveMap(i); });
