@@ -29,8 +29,9 @@
       d3.select("#main-header").remove();
     }
   
-    var maps;
-    var gutter = 5;
+    var maps,
+        mapLocked = false,
+        gutter = 5;
     
     function px(x) {
       return x + "px";
@@ -60,7 +61,8 @@
           .data(maps.features).enter()
         .append("div")
           .each(setPosition)
-          .attr("class", "map-container");
+          .attr("class", "map-container")
+          .attr("id", function(d, i) { return "map-container" + i; });
     
       var header = container
         .append("a")
@@ -89,6 +91,13 @@
               maxZoom: 15,
               zoomControl: false
             });
+            
+            map.on("mousemove", function() { setActiveMap(i); });
+            map.on("dragstart", function() { lockActiveMap(i); });
+            map.on("zoomstart", function() { lockActiveMap(i); });
+            map.on("dragend", function() { unlockActiveMap(i); });
+            map.on("zoomend", function() { unlockActiveMap(i); });
+
 
             map.attributionControl.setPrefix('');
           
@@ -101,6 +110,23 @@
         update();
         
     });
+    
+    function lockActiveMap(i) {
+      mapLocked = true;
+      setActiveMap(i);
+    }
+    
+    function unlockActiveMap(i) {
+      mapLocked = false;
+      setActiveMap(i);
+    }
+    
+    function setActiveMap(i) {
+      if (!mapLocked) {
+        d3.selectAll(".map-container").classed("active", false);
+        d3.selectAll("#map-container" + i).classed("active", true);
+      }
+    }
     
     function setPosition(d, i) {
       var width = window.innerWidth,
