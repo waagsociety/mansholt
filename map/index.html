@@ -201,9 +201,13 @@
           smallestDistance = Number.POSITIVE_INFINITY;
 
       var scrollTop = d3.select("#sidebar").property("scrollTop");        
-  
+      //console.log("#sidebar scrollTop = " + scrollTop);
       maps.features.forEach(function(d, i) {
-        var distance = scrollTop - d.properties.offsetTop;
+        
+        var nth = d3.select("#sidebar ul li:nth-child(" + (i + 1) + ")");
+        var offsetTop = nth[0][0].offsetTop;
+        
+        var distance = scrollTop - offsetTop;
         if (Math.abs(distance) < smallestDistance && distance > -100) {
           smallestDistance = distance;
           index = i;
@@ -255,9 +259,12 @@
     }
     
     function setText(i) {
+      var nth = d3.select("#sidebar ul li:nth-child(" + (i + 1) + ")");
+      var offsetTop = nth[0][0].offsetTop;
+      
       d3.select("#sidebar").transition()
           .duration(1200)
-          .tween("tween", scrollTopTween(maps.features[i].properties.offsetTop));          
+          .tween("tween", scrollTopTween(offsetTop));          
     }
 
     function setMap(i) {          
@@ -290,10 +297,7 @@
       
       maps = json;
       var li = d3.select("#sidebar").selectAll("li")
-          .data(maps.features)          
-          .each(function(d, i) {
-            maps.features[i].properties.offsetTop = this.offsetTop + i * 20;
-          });          
+          .data(maps.features);                  
           
       li.select("h2")
         .html(function(d) { return d.properties.title; });      
