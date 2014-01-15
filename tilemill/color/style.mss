@@ -1,16 +1,16 @@
-@overig:       #2d2d2d;
-@gras:          #8dd3c7;
-@aardappelen:   #ffffb3;
-@mais:          #80b1d3;
+@gras:          #b3de69;
+@aardappelen:   #8e5816;
+@mais:          #ffed6f;
 @bloemen:       #fdb462;
-@granen:        #b3de69;
+@granen:        #8dd3c7;
 @uien:          #bc80bd;
 @fruit:         #ccebc5;
-@bieten:        #ffed6f;
-@peulvruchten:  #cdad0d;
+@bieten:        #80b1d3;
+@peulvruchten:  #ffffb3;
 @zaden:         #bebada;
 @hennep:        #fccde5;
 @groenten:      #fb8072;
+@overig:        #2d2d2d;
 
 Map {
   background-color: black;
