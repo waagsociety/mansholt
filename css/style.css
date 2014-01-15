@@ -208,17 +208,15 @@ border-spacing: 3px;
   padding-left: 5px;
 }
 
-.gras         { background-color: #b3de69; }
+.gras         { background-color: #c8f67a; }
 .aardappelen  { background-color: #8e5816; }
-.mais         { background-color: #ffed6f; }
-.bloemen      { background-color: #fdb462; }
-.granen       { background-color: #8dd3c7; }
+.mais         { background-color: #f6b21b; }
+.bloemen      { background-color: #eeab85; }
+.granen       { background-color: #b1dfa7; }
 .uien         { background-color: #bc80bd; }
-.fruit        { background-color: #ccebc5; }
-.bieten       { background-color: #80b1d3; }
+.fruit        { background-color: #fb8072; }
+.bieten       { background-color: #40a5ec; }
 .peulvruchten { background-color: #ffffb3; }
-.zaden        { background-color: #bebada; }
-.hennep       { background-color: #fccde5; }
-.groenten     { background-color: #fb8072; }
-.overig       { background-color: #2d2d2d; }
-
+.zaden        { background-color: #5942ee; }
+.groenten     { background-color: #58dfc8; }
+.overig       { background-color: #dddddd; }

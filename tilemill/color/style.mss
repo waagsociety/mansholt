@@ -1,19 +1,18 @@
-@gras:          #b3de69;
+@gras:          #c8f67a;
 @aardappelen:   #8e5816;
-@mais:          #ffed6f;
-@bloemen:       #fdb462;
-@granen:        #8dd3c7;
+@mais:          #f6b21b;
+@bloemen:       #eeab85;
+@granen:        #b1dfa7;
 @uien:          #bc80bd;
-@fruit:         #ccebc5;
-@bieten:        #80b1d3;
+@fruit:         #fb8072;
+@bieten:        #40a5ec;
 @peulvruchten:  #ffffb3;
-@zaden:         #bebada;
-@hennep:        #fccde5;
-@groenten:      #fb8072;
-@overig:        #2d2d2d;
+@zaden:         #5942ee;
+@groenten:      #58dfc8;
+@overig:        #dddddd;
 
 Map {
-  background-color: black;
+  background-color: white;
 }
 
 #gewaspercelen {
@@ -48,9 +47,6 @@ Map {
   }
   [category="zaden"] {
     polygon-fill: @zaden;
-  }
-  [category="hennep"] {
-    polygon-fill: @hennep;
   }
 }
 

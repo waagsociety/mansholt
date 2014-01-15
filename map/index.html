@@ -363,29 +363,26 @@
         map.addLayer(tileLayerColor);
         map.removeLayer(tileLayerBlackWhite);
         d3.select("#legend").style("display", "block");
-        d3.select("#single-map").style("background-color", "black");
       } else {
         map.addLayer(tileLayerBlackWhite);
         map.removeLayer(tileLayerColor);
         d3.select("#legend").style("display", "none");
-        d3.select("#single-map").style("background-color", "white");        
       }
       
     }
     
     var crops = [
       {"name": "gras", "title": "Gras"},
-      {"name": "aardappelen", "title": "Aardappelen"},
       {"name": "mais", "title": "Maïs"},
-      {"name": "bloemen", "title": "Bloemen"},
+      {"name": "aardappelen", "title": "Aardappelen"},
       {"name": "granen", "title": "Granen"},
+      {"name": "bloemen", "title": "Bloemen"},
+      {"name": "peulvruchten", "title": "Peulvruchten"},
       {"name": "uien", "title": "Uien"},
       {"name": "fruit", "title": "Fruit"},
       {"name": "bieten", "title": "Bieten"},
-      {"name": "peulvruchten", "title": "Peulvruchten"},
-      {"name": "zaden", "title": "Zaden"},
-      {"name": "hennep", "title": "Hennep"},
       {"name": "groenten", "title": "Groenten"},
+      {"name": "zaden", "title": "Zaden"},
       {"name": "overig", "title": "Overig"}
     ];   
         
