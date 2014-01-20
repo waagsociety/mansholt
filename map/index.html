@@ -25,13 +25,13 @@
 
   <a id="toggle-text" href="#">
     <div class="map-header">
-      <div class="map-header-wrapper"><h2>Tekst</h2><p><span class="link disabled">aan</span> | <span class="link">uit</span></p></div>
+      <div class="map-header-wrapper"><h2>Tekst</h2><p><span class="link toggle enabled">aan</span> | <span class="link  toggle">uit</span></p></div>
     </div>
   </a>
 
   <a id="layers" href="#">
     <div class="map-header">
-      <div class="map-header-wrapper"><h2>Gewassen</h2><p><span class="link">aan</span> | <span class="link disabled">uit</span></p></div>
+      <div class="map-header-wrapper"><h2>Gewassen</h2><p><span class="link toggle">aan</span> | <span class="link toggle enabled">uit</span></p></div>
     </div>
   </a>
   
@@ -188,7 +188,8 @@
     var map,
         maps;
         
-    var exhibition = false;
+    var exhibition = false,
+        width = 580;
         
     var disableMapChange = false,
         disableTextChange = false;
@@ -351,24 +352,24 @@
     }
     
     d3.select("#toggle-text").on("click", function() {
-      d3.selectAll("#toggle-text .link").classed("disabled", function(d, i) {
-        var disabled = d3.select(this).classed("disabled");
+      d3.selectAll("#toggle-text .link").classed("enabled", function(d, i) {
+        var enabled = d3.select(this).classed("enabled");
         if (i == 0) {
-          toggleText(disabled);
+          toggleText(enabled);
         }        
-        return !disabled;
+        return !enabled;
       });
       
       d3.event.preventDefault();
     });
     
     d3.select("#layers").on("click", function() {
-      d3.selectAll("#layers .link").classed("disabled", function(d, i) {
-        var disabled = d3.select(this).classed("disabled");
+      d3.selectAll("#layers .link").classed("enabled", function(d, i) {
+        var enabled = d3.select(this).classed("enabled");
         if (i == 1) {
-          setCrops(disabled);
+          setCrops(enabled);
         }        
-        return !disabled;
+        return !enabled;
       });
       
       d3.event.preventDefault();
@@ -378,7 +379,7 @@
     if (hash.split("/").indexOf("exhibition") >= 0) {
       exhibition = true;
       
-      var width = 320;
+      width = 320;
       
       d3.select("#introduction").remove();
       d3.select("a#back").attr("href", "../#exhibition");
@@ -402,7 +403,7 @@
       } else {
         disableMapChange = true;
         d3.select("#sidebar").style("display", "block");
-        d3.select("#single-map-container").style("right", "580px");
+        d3.select("#single-map-container").style("right", width + "px");
       }
       map.invalidateSize();
     }

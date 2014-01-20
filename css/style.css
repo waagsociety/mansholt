@@ -97,9 +97,15 @@ a .map-header span.link {
   text-decoration: underline;
 }
 
-a .map-header span.link.disabled {
+a .map-header span.link.toggle {
   text-decoration: none;
 }
+
+a .map-header span.link.toggle.enabled {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 
 a,
 a:hover,
@@ -187,7 +193,7 @@ a:visited {
 
 #layers .map-header, 
 #legend.map-header {
-  width: 187px;
+  width: 190px;
 }
 
 #toggle-text .map-header {
