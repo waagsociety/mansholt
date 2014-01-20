@@ -94,12 +94,11 @@ a {
 
 .header h3,
 a .map-header span.link {
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a .map-header span.link.disabled {
-  text-decoration: underline;
-  font-weight: bold;
+  text-decoration: none;
 }
 
 a,
