@@ -379,12 +379,12 @@
     if (hash.split("/").indexOf("exhibition") >= 0) {
       exhibition = true;
       
-      width = 320;
+      width = 400;
       
       d3.select("#introduction").remove();
       d3.select("a#back").attr("href", "../#exhibition");
 
-      d3.select("#sidebar").style("font-size", "14px");
+      d3.select("#sidebar").style("font-size", "15px");
       d3.select("#sidebar").style("width", width + "px");
       d3.select("#single-map-container").style("right", width + "px");
 
