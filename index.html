@@ -101,8 +101,11 @@
             map.on("zoomend", function() { unlockActiveMap(i); });
 
             map.attributionControl.setPrefix('');
-          
-            L.tileLayer("http://tiles.waag.org/v2/mansholt/{z}/{x}/{y}.png", {
+
+	      
+//            L.tileLayer("http://tiles.waag.org/v2/mansholt/{z}/{x}/{y}.png", {
+	      
+	    L.tileLayer("http://rtiles.waag.org/services/mansholt/tiles/{z}/{x}/{y}.png", {
                   attributionControl: false
             }).addTo(map);       
             map.setView([d.geometry.coordinates[1], d.geometry.coordinates[0]], d.properties.zoom1);
