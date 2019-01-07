@@ -300,11 +300,11 @@
 
       var waagAttribution = '<a href="http://www.waag.org" title="Institute for art, science &amp; technology">Waag Society <img id="waag-mini" src="../img/waag-mini.png" /></a>';
       
-      tileLayerBlackWhite = L.tileLayer("http://tiles.waag.org/v2/mansholt/{z}/{x}/{y}.png", {
+      tileLayerBlackWhite = L.tileLayer("http://rtiles.waag.org/services/tiles/mansholt/{z}/{x}/{y}.png", {
         attribution: waagAttribution
       }).addTo(map);
       
-      tileLayerColor = L.tileLayer("http://tiles.waag.org/v2/mansholt-crops/{z}/{x}/{y}.png", {
+      tileLayerColor = L.tileLayer("http://rtiles.waag.org/services/tiles/mansholt-crops/{z}/{x}/{y}.png", {
         attribution: waagAttribution
       });      
       
